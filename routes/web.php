@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controller::class, 'index']);
+Route::get('/thank-you', [Controller::class, 'thankYou']);
+Route::get('/sorry', [Controller::class, 'sorry']);
 
-Route::resource('callback', ApiController::class);
+Route::post('callback', [ApiController::class, 'callback']);

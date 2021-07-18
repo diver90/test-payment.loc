@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel AJAX Request Example</title>
+    <title>Test Task Zavalniuk</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
@@ -15,7 +15,7 @@
 <div class="container">
     <div class="d-flex mb-4">
         <div class="p-2 w-100 bd-highlight">
-            <h2>Laravel AJAX Example</h2>
+            <h2>Test Task Zavalniuk</h2>
         </div>
     </div>
     <div class="d-flex mb-4">
@@ -28,6 +28,25 @@
             </button>
         </div>
     </div>
+    <div>
+        <table class="table table-inverse">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Created At</th>
+            </tr>
+            </thead>
+            <tbody id="todos-list" name="todos-list">
+            @foreach ($orders as $order)
+                <tr id="todo{{$order->id}}">
+                    <td>{{$order->id}}</td>
+                    <td>{{$order->status}}</td>
+                    <td>{{$order->created_at}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     <div>
         <div class="modal-footer">
 

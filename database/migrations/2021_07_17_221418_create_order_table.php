@@ -14,8 +14,8 @@ class CreateOrderTable extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->id();
-            $table->boolean('status')->nullable()->default(null);
+            $table->string('id');
+            $table->string('status')->default('unpaid');
             $table->timestamps();
         });
     }
